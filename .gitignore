@@ -1,0 +1,61 @@
+# Ignore virtual environment
+.venv
+env
+
+# Ignore Streamlit cache files
+.streamlit/cache
+
+# Ignore Streamlit logs
+.streamlit/logs
+
+# Ignore Streamlit cookies
+.streamlit/cookies
+
+# Ignore Streamlit theme files
+.streamlit/custom_theme
+
+# Ignore Streamlit config files
+.streamlit/config.toml
+
+# Ignore Streamlit secrets
+.streamlit/secrets.toml
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+
+# Ignore Python egg files
+*.egg
+
+# Ignore Python dist-info files
+*.dist-info
+
+# Ignore Python build files
+build/
+
+# Ignore Python package files
+*.whl
+*.tar.gz
+*.zip
+*.bz2
+*.tar
+*.rar
+*.exe
+*.dll
+*.so
+*.gif
+*.png
+*.tgz
+*.js
+
+# Ignore Jupyter notebook checkpoints
+*.ipynb_checkpoints
+
+# Ignore Jupyter notebook output files
+*.nbconvert
+
+# Ignore Jupyter notebook log files
+*.log

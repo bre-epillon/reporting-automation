@@ -1,0 +1,139 @@
+\documentclass[a4paper,12pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref} % For hyperlinks
+\usepackage{palatino}
+\usepackage{lipsum} % For placeholder text
+\usepackage{graphicx} % For including images
+\usepackage{amsmath} % For mathematical symbols
+\usepackage{geometry} % For page layout
+\usepackage{tabularx} % For tables
+\usepackage{booktabs} % For better table lines
+\usepackage{caption} % For captions
+\usepackage{longtable}
+% \usepackage{pdflscape}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{Confidential}
+\SetWatermarkScale{1}
+\SetWatermarkColor[gray]{0.9}
+
+\geometry{margin=1in}
+
+% Title and Author
+\title{Claims and Premiums Report: Periodical Analysis and Insights}
+\author{$e\pi$}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\maketitle
+\tableofcontents
+\abstract{
+    This internal report provides a detailed analysis of claims and premiums for the specified period. 
+    It includes visual representations, tabular summaries, and insights into large losses notified in 2025 Q1. 
+    The document is intended to support decision-making processes within the actuarial team by presenting key data and trends.
+}
+
+\newpage
+
+\section{Written Premiums and Incurred Claims Update}
+\label{sec:premiums-claims-update}
+
+In Figure \ref{fig:premiums-claims-summary}, we present the current written premiums and incurred claims for the period as of 2025-03-26. 
+Figure \ref{fig:premiums-claims-panel-data} instead reports the development over time of the written premiums and incurred claims over time.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/premium-claims-split_2025-03-26.png}
+    \caption{Above: Written premiums per UWY and per LoB; Above: Below: incurred claims per UWY and per LoB. All numbers are reported in USD. Last update: 2025-03-26.}
+    \label{fig:premiums-claims-summary}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/premium-claims-panel-data_2025-03-26.png}
+    \caption{Panel data of the development of the written premiums (above) and incurred claims (below) per UWY. All numbers are reported in USD. Last update: 2025-03-26.}
+    \label{fig:premiums-claims-panel-data}
+\end{figure}
+
+\subsection{Energy}
+\label{subsec:data-per-subLoB-energy}
+\begin{small}
+    \input{tables/table_energy}
+\end{small}
+
+\subsection{Life}
+\label{subsec:data-per-subLoB-life}
+\begin{small}
+    \input{tables/table_life}
+\end{small}
+
+
+\subsection{Property}
+\label{subsec:data-per-subLoB-property}
+
+Caveat: in this LoB we noticed that the the data coming fomr PRP are missing (see section \ref{subsec:data-per-subLoB-discontinued}).
+\begin{small}
+    \input{tables/table_property}
+\end{small}
+
+
+\subsection{Discontinued}
+\label{subsec:data-per-subLoB-discontinued}
+Until March 2025, the following LoBs are considered discontinued:
+\begin{itemize}
+    \item DC Bonds
+    \item DC Financial Lines (Financial Institutions)
+    \item DC Property (Property Proportional)
+    \item DC Liability
+\end{itemize}
+Property Proportional used to be considered as discontinued, but it is now considered as a sub LoB of property given that it falls into the Company appetite.
+
+\begin{small}
+    \input{tables/table_discontinued}
+\end{small}
+
+\section{Large Losses notified in 2025 Q1 (MBE)}
+\label{sec:large-losses}
+
+Below we report the large losses notified in 2025 Q1. Treshold for large losses is set at \$ 500k for all LoB, apart from Energy where it is set at \$750K.
+\begin{small}
+    \input{tables/large-losses-table-2025Q1}
+\end{small}
+
+\section{Open Large Losses}
+\label{sec:open-large-losses}
+To be noted: Pemex loss was previously reserved at \$45,440 our share; Settlement has been agreed at \$ 24,605 our share and was processed at March $ \text{27}^{th} $ 2025.
+
+\begin{small}
+    \input{tables/open-large-losses-table}
+\end{small}
+
+\section{Potential Large Losses}
+\label{sec:potential-large-losses}
+
+\begin{small}
+    \input{tables/potential-large-losses-table}
+\end{small}
+
+
+\section{Key Figures} 
+\label{sec:key-figures}
+
+\input{includes/key-figures.tex}
+
+% ======== Appendix ========
+% The appendix is a separate section that contains additional information or supplementary material.
+\section{Appendix}
+\label{sec:appendix}
+
+\subsection{Glossary}
+\label{subsec:glossary}
+
+\input{includes/glossary.tex}
+
+\end{document}
