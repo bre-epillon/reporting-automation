@@ -9,7 +9,7 @@ from shared.constants import LOB_MAPPING
 from shared.data_api import fetch_data
 from shared.reporting_utils import compile_latex_to_pdf
 
-st.set_page_config(page_title="Premiums Analyzer", layout="wide")
+st.set_page_config(page_title="Report Generator", page_icon="📈", layout="wide")
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 IMG_DIR = PROJECT_ROOT / "images"
