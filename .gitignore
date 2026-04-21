@@ -59,3 +59,22 @@ build/
 
 # Ignore Jupyter notebook log files
 *.log
+
+# Ignore LaTeX generated files, but keep PDFs
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+*.pdf
