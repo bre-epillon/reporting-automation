@@ -50,6 +50,7 @@ LATEX_TEMPLATE = """
 
 # --- 2. HELPER FUNCTIONS ---
 def clean_and_parse_data(file):
+
     df = pd.read_excel(
         file,
         sheet_name="Table",
@@ -118,7 +119,7 @@ if uploaded_file is not None:
                 if df[col].dtype in ["float64", "int64"]
             }
         ),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
