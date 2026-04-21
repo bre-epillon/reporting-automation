@@ -5,7 +5,7 @@ import os
 from shared.colored_logging import info, warning, error, debug, success
 
 
-def initialize_session_state(debug: bool = False):
+def initialize_session_state():
     """Initialize or retrieve the session state with repositories and services."""
 
     # Get current date information
@@ -17,13 +17,10 @@ def initialize_session_state(debug: bool = False):
     year = now.year
     uwy = year - 1 if month in ["January", "February", "March"] else year
 
+    # import data if not already in session state and cache them in session state
     st.session_state.setdefault("current_date", current_date)
     st.session_state.setdefault("time", time)
     st.session_state.setdefault("month", month)
     st.session_state.setdefault("quarter", quarter)
     st.session_state.setdefault("year", year)
     st.session_state.setdefault("uwy", uwy)
-
-    # import data if not already in session state and cache them in session state
-    if st.session_state.initalized == False:
-        st.session_state.initalized = True
