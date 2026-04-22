@@ -79,8 +79,7 @@ class PremiumsVisualizer:
 
         if color_map_style == "focus":
             color_map = {
-                year: "#D3D3D3" if year != current_uwy else "#EF553B"
-                for year in years
+                year: "#D3D3D3" if year != current_uwy else "#EF553B" for year in years
             }
             chart_data["is_focus"] = (
                 chart_data["Policy Underwriting Year"] == current_uwy
@@ -401,7 +400,9 @@ class PremiumsVisualizer:
         return ImageFont.load_default()
 
     @staticmethod
-    def _build_numeric_ticks(start: float, end: float, tick_count: int = 6) -> list[float]:
+    def _build_numeric_ticks(
+        start: float, end: float, tick_count: int = 6
+    ) -> list[float]:
         step = (end - start) / max(tick_count - 1, 1)
         return [start + (step * idx) for idx in range(tick_count)]
 
