@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from jinja2 import Template
+from pathlib import Path
 
 from presentation.state.session_state_manager import initialize_session_state
 
@@ -56,6 +57,7 @@ def clean_and_parse_data(file):
     df.dropna(how="all", axis=1, inplace=True)
     df.dropna(how="all", axis=0, inplace=True)
     df.rename(columns={df.columns[0]: "Module / Submodule"}, inplace=True)
+    df.rename(columns={"Counterparty Default Module": "CDF Module"}, inplace=True)
     df.replace("-", 0, inplace=True)
     df.fillna(0, inplace=True)
 
@@ -83,6 +85,16 @@ def format_for_latex(df):
     escaped_columns = [escape_latex_chars(col) for col in df_latex.columns]
 
     return df_latex, escaped_columns
+
+
+def export_latex_to_file(latex_code):
+    """Saves the generated LaTeX code to src/qrt_evolution.tex relative to project root."""
+    project_root = Path(__file__).resolve().parents[2]
+    output_path = project_root / "src" / "qrt_evolution.tex"
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(latex_code)
 
 
 uploaded_file = st.file_uploader("Upload your QRT Excel file", type=["xlsx", "xls"])
@@ -114,6 +126,7 @@ if uploaded_file is not None:
             jinja_template = Template(LATEX_TEMPLATE)
             latex_code = jinja_template.render(columns=escaped_columns, rows=rows_data)
 
+            export_latex_to_file(latex_code)
             st.success("LaTeX code generated successfully!")
             st.code(latex_code, language="latex")
             st.download_button(
