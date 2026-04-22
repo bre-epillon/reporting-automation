@@ -13,7 +13,7 @@
 \usepackage{booktabs} % For better table lines
 \usepackage{caption} % For captions
 \usepackage{longtable}
-% \usepackage{pdflscape}
+\usepackage{lscape}
 
 \usepackage{draftwatermark}
 \SetWatermarkText{Confidential}
@@ -45,7 +45,10 @@
 \section{Written Premiums Update}
 \label{sec:premiums-update}
 
-\subsection{Energy}
+\section{Energy}
+\label{sec:Energy}
+This section is dedicated to the Energy business portfolio.
+\subsection{Written Premiums Energy}
 \label{subsec:data-per-subLoB-energy}
 \begin{figure}[ht]
     \centering
@@ -54,7 +57,18 @@
     \label{fig:premiums-Energy-summary}
 \end{figure}
 
-\subsection{Property}
+\subsection{Open Large Losses Energy}
+\label{subsec:open-large-losses-Energy}
+\input{src/open_large_losses_Energy}
+
+\subsection{Potential Large Losses Energy}
+\label{subsec:potential-large-losses-Energy}
+\input{src/potential_large_losses_Energy}
+
+\section{Property}
+\label{sec:Property}
+This section is dedicated to the Property business portfolio.
+\subsection{Written Premiums Property}
 \label{subsec:data-per-subLoB-Property}
 \begin{figure}[ht]
     \centering
@@ -63,7 +77,18 @@
     \label{fig:premiums-Property-summary}
 \end{figure}
 
-\subsection{Life}
+\subsection{Open Large Losses Property}
+\label{subsec:open-large-losses-Property}
+\input{src/open_large_losses_Property}
+
+\subsection{Potential Large Losses Property}
+\label{subsec:potential-large-losses-Property}
+\input{src/potential_large_losses_Property}
+
+\section{Life}
+\label{sec:Life}
+This section is dedicated to the Life business portfolio.
+\subsection{Written Premiums Life}
 \label{subsec:data-per-subLoB-Life}
 \begin{figure}[ht]
     \centering
@@ -72,7 +97,18 @@
     \label{fig:premiums-Life-summary}
 \end{figure}
 
-\subsection{Discontinued}
+\subsection{Open Large Losses Life}
+\label{subsec:open-large-losses-Life}
+\input{src/open_large_losses_Life}
+
+\subsection{Potential Large Losses Life}
+\label{subsec:potential-large-losses-Life}
+\input{src/potential_large_losses_Life}
+
+\section{Discontinued}
+\label{sec:Discontinued}
+This section is dedicated to the Discontinued business portfolio.
+\subsection{Written Premiums Discontinued}
 \label{subsec:data-per-subLoB-Discontinued}
 \begin{figure}[ht]
     \centering
@@ -80,5 +116,23 @@
     \caption{Written premiums per UWY and per LoB. All numbers are reported in \USD. Last update: 2026-02-27.}
     \label{fig:premiums-Discontinued-summary}
 \end{figure}
+
+\subsection{Open Large Losses Discontinued}
+\label{subsec:open-large-losses-Discontinued}
+\input{src/open_large_losses_Discontinued}
+
+\subsection{Potential Large Losses Discontinued}
+\label{subsec:potential-large-losses-Discontinued}
+\input{src/potential_large_losses_Discontinued}
+
+
+\section{QRT Evolution}
+\label{sec:qrt-evolution}
+\input{src/qrt_evolution}
+
+\subsection{Glossary}
+\label{sec:glossary}
+\input{src/glossary}
+
 
 \end{document}
